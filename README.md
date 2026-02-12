@@ -13,6 +13,7 @@ contenido:
 - Guion de la entrevista
 - Diagrama qué cómo cuándo
 - Perfiles
+- Enlace de la encuesta
 
 
 #Avance 2
