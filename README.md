@@ -18,6 +18,7 @@ contenido:
 
 #Avance 2
 Contenido:
+- Documento de avances 2
 
 #Corte 2:
 Contenido:
