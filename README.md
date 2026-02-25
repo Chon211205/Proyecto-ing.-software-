@@ -1,10 +1,10 @@
 # Proyecto-ing.-software-
 
-#Avance 1
+# Avance 1
 Contenido:
 -Documento del avance 1
 
-#Corte 1
+# Corte 1
 contenido:
 - Documento del corte 1
 - Documento brief
@@ -16,11 +16,11 @@ contenido:
 - Enlace de la encuesta
 
 
-#Avance 2
+# Avance 2
 Contenido:
 - Documento de avances 2
 
-#Corte 2:
+# Corte 2:
 Contenido:
 
 Scrum:
