@@ -39,6 +39,7 @@ Contenido:
 - Story Mapping
 - Diagrama de uso 
 - Bitácora 
+- Evidencia Reuniones con Cliente
 - Presentación Corte 2
 
 
