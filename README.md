@@ -1,4 +1,11 @@
-# Proyecto-ing.-software-
+# Proyecto Ingeniería de Software 1
+
+## Integrantes 
+- Belén Abigail Monterroso
+- David Sebastián Lemus
+- Luis Alfredo Lee
+- Luis Alejandro Hernández
+
 
 # Avance 1
 Contenido:
@@ -22,6 +29,13 @@ Contenido:
 
 # Corte 2:
 Contenido:
+- Documento del corte 2
+- Ideas de prototipos 
+- Story Board 
+- Historias de usuarios
+- Story Mapping
+- Diagrama de uso 
+- Bitácora 
 
-Scrum:
+
 
