@@ -42,5 +42,9 @@ Contenido:
 - Evidencia Reuniones con Cliente
 - Presentación Corte 2
 
+### Corte 3:
+Contenido:
+- 
+
 
 
