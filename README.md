@@ -58,8 +58,8 @@ Contenido:
 
 * Documeto del corte 3
 * Diagrama entidad relacion
-* Enlace prototipo 1
-* Enlace prototipo 2
+* [Enlace prototipo 1](https://www.figma.com/proto/8H415MMVMnOnSaXiZnCidW/Prototype-1---Cuidado--copia-?node-id=81-2&p=f&t=tpPUy83TYafCIqZA-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=81%3A2&show-proto-sidebar=1) 
+* [Enlace prototipo 2](https://www.figma.com/proto/bQMFPjCOe6QtaEUH8TMqtc/Prototype---Cuidado-Adulto-Mayor?node-id=81-2&p=f&t=S6v0XlioIw1qb1bY-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=81%3A2&show-proto-sidebar=1) 
 * Fotografia de la reunion 1
 * Fotografia de la reunion 2
 * Diagrama de paquetes
