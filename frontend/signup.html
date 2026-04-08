@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f2f2f2;
+      min-height: 100vh;
+    }
+
+    .contenedorPrincipal {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      overflow: hidden;
+    }
+
+    .panelIzquierdo {
+      width: 64%;
+      padding: 70px 70px 40px 90px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .titulo {
+      font-size: 42px;
+      font-weight: 400;
+      color: #7a7a7a;
+      margin-bottom: 6px;
+    }
+
+    .subtitulo {
+      font-size: 24px;
+      color: #6f6f6f;
+      margin-bottom: 28px;
+    }
+
+    .subtitulo a {
+      text-decoration: none;
+      color: #2f6fed;
+      font-weight: 500;
+      margin-left: 28px;
+    }
+
+    .formulario {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .grupoCampo {
+      margin-bottom: 18px;
+    }
+
+    .grupoDoble {
+      display: flex;
+      gap: 14px;
+    }
+
+    .grupoDoble .grupoCampo {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      font-size: 16px;
+      color: #7a7a7a;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .inputIcono {
+      height: 50px;
+      width: 100%;
+      border: 1.5px solid #d6d6d6;
+      border-radius: 16px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 12px;
+    }
+
+    .inputIcono input,
+    .inputIcono select {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 15px;
+      color: #888;
+    }
+
+    .inputIcono input::placeholder {
+      color: #b4b4b4;
+    }
+
+    .inputIcono select {
+      appearance: none;
+      color: #b4b4b4;
+    }
+
+    .icono {
+      min-width: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8c8c8c;
+      font-size: 18px;
+    }
+
+    .togglePassword {
+      cursor: pointer;
+      color: #8c8c8c;
+      font-size: 18px;
+    }
+
+    .botonContenedor {
+      margin-top: 34px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .boton {
+      background: #2f6fed;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      min-width: 215px;
+    }
+
+    .boton:hover {
+      background: #245ed0;
+    }
+
+    .panelDerecho {
+      width: 36%;
+      background: #3575eb;
+      border-top-left-radius: 70px;
+      border-bottom-left-radius: 70px;
+      position: relative;
+    }
+
+    .controlesVentana {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      display: flex;
+      gap: 22px;
+      color: #3f2fff;
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    @media (max-width: 1000px) {
+      .contenedorPrincipal {
+        flex-direction: column;
+      }
+
+      .panelIzquierdo,
+      .panelDerecho {
+        width: 100%;
+      }
+
+      .panelDerecho {
+        min-height: 180px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      .panelIzquierdo {
+        padding: 40px 30px;
+      }
+
+      .grupoDoble {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedorPrincipal">
+    <div class="panelIzquierdo">
+      <h1 class="titulo">Iniciemos</h1>
+      <p class="subtitulo">
+        ¿Ya tienes cuenta?
+        <a href="#">Inicia Sesión</a>
+      </p>
+
+      <form class="formulario">
+        <div class="grupoCampo">
+          <label>Nombre de usuario</label>
+          <div class="inputIcono">
+            <span class="icono">👤</span>
+            <input type="text" placeholder="Nombre de usuario">
+          </div>
+        </div>
+
+        <div class="grupoCampo">
+          <label>Tipo de usuario</label>
+          <div class="inputIcono">
+            <span class="icono">🪪</span>
+            <select>
+              <option selected disabled>Seleccione tipo de usuario</option>
+              <option>Administrador</option>
+              <option>Cuidador</option>
+              <option>Paciente</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grupoDoble">
+          <div class="grupoCampo">
+            <label>Fecha de Nacimiento</label>
+            <div class="inputIcono">
+              <span class="icono">🗓️</span>
+              <input type="text" placeholder="xx-xx-xxxx">
+            </div>
+          </div>
+
+          <div class="grupoCampo">
+            <label>Número de teléfono</label>
+            <div class="inputIcono">
+              <span class="icono">📱</span>
+              <input type="text" placeholder="Número de teléfono">
+            </div>
+          </div>
+        </div>
+
+        <div class="grupoCampo">
+          <label>Contraseña</label>
+          <div class="inputIcono">
+            <span class="icono">🔒</span>
+            <input type="password" id="password" placeholder="Ingrese Contraseña (10-32 caracteres)">
+            <span class="togglePassword" onclick="mostrarPassword()">👁️</span>
+          </div>
+        </div>
+
+        <div class="botonContenedor">
+          <button type="submit" class="boton">Solicitar Acceso</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="panelDerecho">
+      <div class="controlesVentana">
+        <span>–</span>
+        <span>□</span>
+        <span>×</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function mostrarPassword() {
+      const input = document.getElementById("password");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>
