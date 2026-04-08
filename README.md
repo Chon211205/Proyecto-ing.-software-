@@ -69,13 +69,13 @@ Contenido:
 * Diagrama uml
 * Presentacion Corte 3
 
-### Scrumb:
+# Scrumb:
 
 Contenido:
 
 * Sprint1
 
-### frontend:
+# Frontend:
 
 Contenido:
 
