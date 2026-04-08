@@ -1,0 +1,19 @@
+/* Estilos específicos para la página de Iniciar Sesión */
+
+.enlaceOlvide {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.enlaceOlvide a {
+  text-decoration: none;
+  color: #2f6fed;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.enlaceOlvide a:hover {
+  color: #245ed0;
+  text-decoration: underline;
+}
