@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuarios Registrados - Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin-usuarios.css">
+</head>
+
+<body>
+
+    <div class="adminContenedor">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebarLogo">
+                <span class="logoIcono">🏥</span>
+                <div>
+                    <p class="logoNombre">MediCare</p>
+                    <p class="logoRol">Panel Admin</p>
+                </div>
+            </div>
+
+            <nav class="sidebarNav">
+                <a href="#" class="navItem">
+                    <span class="navIcono">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin-usuarios.html" class="navItem activo">
+                    <span class="navIcono">👥</span>
+                    <span>Usuarios</span>
+                </a>
+                <a href="#" class="navItem">
+                    <span class="navIcono">🩺</span>
+                    <span>Pacientes</span>
+                </a>
+                <a href="#" class="navItem">
+                    <span class="navIcono">📋</span>
+                    <span>Reportes</span>
+                </a>
+                <a href="#" class="navItem">
+                    <span class="navIcono">⚙️</span>
+                    <span>Configuración</span>
+                </a>
+            </nav>
+
+            <div class="sidebarPerfil">
+                <div class="perfilAvatar">CA</div>
+                <div class="perfilInfo">
+                    <p class="perfilNombre">Carlos Admin</p>
+                    <p class="perfilRol">Administrador</p>
+                </div>
+                <a href="login.html" class="perfilSalir" title="Cerrar sesión">⏻</a>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="adminMain">
+
+            <!-- ENCABEZADO -->
+            <header class="adminHeader">
+                <div class="headerTexto">
+                    <h1 class="adminTitulo">Usuarios Registrados</h1>
+                    <p class="adminSubtitulo">Gestión y control de accesos del sistema</p>
+                </div>
+            </header>
+
+            <!-- TARJETAS DE MÉTRICAS -->
+            <section class="metricas">
+                <div class="metricaTarjeta">
+                    <p class="metricaEtiqueta">Total usuarios</p>
+                    <p class="metricaValor" id="totalUsuarios">0</p>
+                </div>
+                <div class="metricaTarjeta">
+                    <p class="metricaEtiqueta">Administradores</p>
+                    <p class="metricaValor colorAzul" id="totalAdmin">0</p>
+                </div>
+                <div class="metricaTarjeta">
+                    <p class="metricaEtiqueta">Cuidadores</p>
+                    <p class="metricaValor colorVerde" id="totalCuidadores">0</p>
+                </div>
+                <div class="metricaTarjeta">
+                    <p class="metricaEtiqueta">Pacientes</p>
+                    <p class="metricaValor colorAmbar" id="totalPacientes">0</p>
+                </div>
+            </section>
+
+            <!-- CONTROLES -->
+            <section class="controlesTabla">
+                <div class="busquedaContenedor">
+                    <span class="busquedaIcono">🔍</span>
+                    <input type="text" id="inputBusqueda" class="busquedaInput" placeholder="Buscar por nombre, usuario o teléfono..." oninput="filtrarUsuarios()">
+                </div>
+                <div class="filtrosBotones">
+                    <button class="filtroBton activo" data-tipo="todos" onclick="setFiltro('todos', this)">Todos</button>
+                    <button class="filtroBton" data-tipo="admin" onclick="setFiltro('admin', this)">Admin</button>
+                    <button class="filtroBton" data-tipo="cuidador" onclick="setFiltro('cuidador', this)">Cuidador</button>
+                    <button class="filtroBton" data-tipo="paciente" onclick="setFiltro('paciente', this)">Paciente</button>
+                </div>
+            </section>
+
+            <!-- TABLA -->
+            <section class="tablaContenedor">
+                <table class="tablaUsuarios" id="tablaUsuarios">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Tipo</th>
+                            <th>Teléfono</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyUsuarios">
+                        <!-- Generado por JS -->
+                    </tbody>
+                </table>
+
+                <div class="tablaVacia" id="tablaVacia" style="display:none;">
+                    <p class="vacioIcono">🔍</p>
+                    <p class="vacioTexto">No se encontraron usuarios</p>
+                    <p class="vacioSub">Intenta con otro término de búsqueda</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- MODAL DETALLE USUARIO -->
+    <div class="modalOverlay" id="modalOverlay" onclick="cerrarModal(event)">
+        <div class="modalTarjeta" id="modalTarjeta">
+            <button class="modalCerrar" onclick="cerrarModalBtn()">×</button>
+            <div class="modalAvatar" id="modalAvatar"></div>
+            <h2 class="modalNombre" id="modalNombre"></h2>
+            <p class="modalId" id="modalId"></p>
+            <div class="modalBadge" id="modalBadge"></div>
+            <div class="modalDatos">
+                <div class="modalFila">
+                    <span class="modalEtiqueta">📱 Teléfono</span>
+                    <span class="modalValor" id="modalTel"></span>
+                </div>
+                <div class="modalFila">
+                    <span class="modalEtiqueta">🗓️ Nacimiento</span>
+                    <span class="modalValor" id="modalNac"></span>
+                </div>
+                <div class="modalFila">
+                    <span class="modalEtiqueta">⚡ Estado</span>
+                    <span class="modalValor" id="modalEstado"></span>
+                </div>
+                <div class="modalFila">
+                    <span class="modalEtiqueta">📅 Registro</span>
+                    <span class="modalValor" id="modalFechaReg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/admin-usuarios.js"></script>
+</body>
+
+</html>

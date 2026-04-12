@@ -1,0 +1,651 @@
+/* =============================================
+   ADMIN - LISTA DE USUARIOS
+   Estilos específicos para admin-usuarios.html
+   Complementa styles.css sin modificarlo
+   ============================================= */
+
+
+/* Layout principal */
+
+.adminContenedor {
+    display: flex;
+    min-height: 100vh;
+    background: #f2f2f2;
+}
+
+
+/* ── SIDEBAR ── */
+
+.sidebar {
+    width: 230px;
+    min-height: 100vh;
+    background: #ffffff;
+    border-right: 1.5px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+}
+
+.sidebarLogo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 22px 22px;
+    border-bottom: 1.5px solid #ebebeb;
+}
+
+.logoIcono {
+    font-size: 24px;
+}
+
+.logoNombre {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2f6fed;
+}
+
+.logoRol {
+    font-size: 11px;
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+.sidebarNav {
+    flex: 1;
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #7a7a7a;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.2s ease;
+}
+
+.navItem:hover {
+    background: #f5f7fe;
+    color: #2f6fed;
+}
+
+.navItem.activo {
+    background: rgba(47, 111, 237, 0.08);
+    color: #2f6fed;
+    font-weight: 500;
+}
+
+.navIcono {
+    font-size: 16px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.sidebarPerfil {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 18px;
+    border-top: 1.5px solid #ebebeb;
+}
+
+.perfilAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(47, 111, 237, 0.12);
+    color: #2f6fed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.perfilNombre {
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+}
+
+.perfilRol {
+    font-size: 11px;
+    color: #a0a0a0;
+}
+
+.perfilInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.perfilSalir {
+    font-size: 16px;
+    color: #c0c0c0;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.perfilSalir:hover {
+    color: #e24b4a;
+}
+
+
+/* ── MAIN ── */
+
+.adminMain {
+    flex: 1;
+    padding: 36px 38px;
+    min-width: 0;
+}
+
+
+/* Header */
+
+.adminHeader {
+    margin-bottom: 28px;
+}
+
+.adminTitulo {
+    font-size: 26px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.adminSubtitulo {
+    font-size: 14px;
+    color: #9a9a9a;
+}
+
+
+/* Métricas */
+
+.metricas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 26px;
+}
+
+.metricaTarjeta {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px 20px;
+    border: 1.5px solid #ebebeb;
+}
+
+.metricaEtiqueta {
+    font-size: 12px;
+    color: #a0a0a0;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metricaValor {
+    font-size: 28px;
+    font-weight: 500;
+    color: #444;
+}
+
+.colorAzul {
+    color: #2f6fed;
+}
+
+.colorVerde {
+    color: #0F6E56;
+}
+
+.colorAmbar {
+    color: #854F0B;
+}
+
+
+/* Controles */
+
+.controlesTabla {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.busquedaContenedor {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1.5px solid #d6d6d6;
+    border-radius: 16px;
+    padding: 0 16px;
+    height: 46px;
+    transition: 0.2s ease;
+}
+
+.busquedaContenedor:focus-within {
+    border-color: #2f6fed;
+    box-shadow: 0 0 0 3px rgba(47, 111, 237, 0.1);
+}
+
+.busquedaIcono {
+    font-size: 14px;
+}
+
+.busquedaInput {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: #555;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+}
+
+.busquedaInput::placeholder {
+    color: #c0c0c0;
+}
+
+.filtrosBotones {
+    display: flex;
+    gap: 8px;
+}
+
+.filtroBton {
+    padding: 10px 18px;
+    border: 1.5px solid #d6d6d6;
+    border-radius: 24px;
+    background: #ffffff;
+    color: #7a7a7a;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-weight: 400;
+}
+
+.filtroBton:hover {
+    border-color: #2f6fed;
+    color: #2f6fed;
+}
+
+.filtroBton.activo {
+    background: #2f6fed;
+    border-color: #2f6fed;
+    color: #ffffff;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(47, 111, 237, 0.3);
+}
+
+
+/* Tabla */
+
+.tablaContenedor {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1.5px solid #ebebeb;
+    overflow: hidden;
+}
+
+.tablaUsuarios {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.tablaUsuarios thead {
+    background: #fafafa;
+}
+
+.tablaUsuarios th {
+    padding: 14px 18px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #a0a0a0;
+    text-align: left;
+    border-bottom: 1.5px solid #ebebeb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tablaUsuarios td {
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #555;
+    border-bottom: 1px solid #f2f2f2;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tablaUsuarios tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tablaUsuarios tbody tr {
+    transition: background 0.15s ease;
+}
+
+.tablaUsuarios tbody tr:hover {
+    background: #f8fbff;
+}
+
+
+/* Anchos de columna */
+
+.tablaUsuarios th:nth-child(1),
+.tablaUsuarios td:nth-child(1) {
+    width: 28%;
+}
+
+.tablaUsuarios th:nth-child(2),
+.tablaUsuarios td:nth-child(2) {
+    width: 14%;
+}
+
+.tablaUsuarios th:nth-child(3),
+.tablaUsuarios td:nth-child(3) {
+    width: 16%;
+}
+
+.tablaUsuarios th:nth-child(4),
+.tablaUsuarios td:nth-child(4) {
+    width: 16%;
+}
+
+.tablaUsuarios th:nth-child(5),
+.tablaUsuarios td:nth-child(5) {
+    width: 13%;
+}
+
+.tablaUsuarios th:nth-child(6),
+.tablaUsuarios td:nth-child(6) {
+    width: 13%;
+}
+
+
+/* Celda usuario */
+
+.celdaUsuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.usuarioAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.usuarioNombre {
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.usuarioId {
+    font-size: 11px;
+    color: #b0b0b0;
+}
+
+
+/* Badges tipo */
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.badge-admin {
+    background: rgba(47, 111, 237, 0.1);
+    color: #2f6fed;
+}
+
+.badge-cuidador {
+    background: rgba(15, 110, 86, 0.1);
+    color: #0F6E56;
+}
+
+.badge-paciente {
+    background: rgba(133, 79, 11, 0.1);
+    color: #854F0B;
+}
+
+
+/* Estado */
+
+.estadoPunto {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.estadoActivo {
+    background: #1D9E75;
+}
+
+.estadoPendiente {
+    background: #EF9F27;
+}
+
+
+/* Botón acción */
+
+.btnAccion {
+    padding: 6px 14px;
+    border: 1.5px solid #d6d6d6;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 12px;
+    color: #7a7a7a;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    transition: 0.2s ease;
+}
+
+.btnAccion:hover {
+    border-color: #2f6fed;
+    color: #2f6fed;
+    background: rgba(47, 111, 237, 0.05);
+}
+
+
+/* Tabla vacía */
+
+.tablaVacia {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.vacioIcono {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.vacioTexto {
+    font-size: 16px;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.vacioSub {
+    font-size: 13px;
+    color: #b0b0b0;
+}
+
+
+/* ── MODAL ── */
+
+.modalOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalOverlay.abierto {
+    display: flex;
+}
+
+.modalTarjeta {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 36px 32px;
+    width: 360px;
+    max-width: 90vw;
+    position: relative;
+    text-align: center;
+    animation: modalEntrada 0.25s ease;
+}
+
+@keyframes modalEntrada {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalCerrar {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #b0b0b0;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: 0.2s ease;
+}
+
+.modalCerrar:hover {
+    color: #444;
+}
+
+.modalAvatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 auto 14px;
+}
+
+.modalNombre {
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.modalId {
+    font-size: 12px;
+    color: #b0b0b0;
+    margin-bottom: 14px;
+}
+
+.modalBadge {
+    margin-bottom: 24px;
+}
+
+.modalDatos {
+    text-align: left;
+    border-top: 1.5px solid #f0f0f0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.modalFila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalEtiqueta {
+    font-size: 13px;
+    color: #a0a0a0;
+}
+
+.modalValor {
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+}
+
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 1100px) {
+    .metricas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+    .adminMain {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .controlesTabla {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filtrosBotones {
+        flex-wrap: wrap;
+    }
+    .tablaUsuarios th:nth-child(4),
+    .tablaUsuarios td:nth-child(4) {
+        display: none;
+    }
+    .tablaUsuarios th:nth-child(3),
+    .tablaUsuarios td:nth-child(3) {
+        display: none;
+    }
+}
